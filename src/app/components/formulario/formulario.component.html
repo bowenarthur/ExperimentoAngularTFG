@@ -1,0 +1,39 @@
+<a class="close" (click)="this.fecharForm()"> &times; </a>
+<form (ngSubmit)="submit()">
+  <h2>Cadastro de Album</h2>
+  <div class="formulario">
+    <div>
+      <label for="nome">Nome: </label>
+      <input type="text" name="nome" [(ngModel)]="album.nome" required />
+      <br />
+      <label for="capa">URL da capa: </label>
+      <input type="text" name="capa" [(ngModel)]="album.capa" required />
+      <br />
+      <label for="categoria">Gênero: </label>
+      <select name="categoria" [(ngModel)]="album.categoria" required>
+        <option [value]="cat" *ngFor="let cat of categorias">{{ cat }}</option>
+      </select>
+      <br />
+      <label for="artista">Artista: </label>
+      <input type="text" name="artista" [(ngModel)]="album.artista" required />
+      <br />
+      <label for="ano">Ano: </label>
+      <input type="number" name="ano" [(ngModel)]="album.ano" required />
+      <br />
+      <label for="gravadora">Gravadora: </label>
+      <input
+        type="text"
+        name="gravadora"
+        [(ngModel)]="album.gravadora"
+        required
+      />
+      <br />
+    </div>
+    <app-edicao-musicas
+      [musicas]="album.musicas"
+      (atualizarMusicasEvent)="atualizarMusicas($event)"
+    >
+    </app-edicao-musicas>
+  </div>
+  <input type="submit" class="botao-cadastrar" value="Enviar" />
+</form>

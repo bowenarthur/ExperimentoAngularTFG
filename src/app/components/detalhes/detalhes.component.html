@@ -1,0 +1,8 @@
+<a class="close" (click)="this.fecharDetalhes()"> &times; </a>
+<h4>{{album.nome}}</h4>
+<p>Artista: {{album.artista}}</p>
+<p>Gênero: {{album.categoria}}</p>
+<p>Ano: {{album.ano}}</p>
+<p>Gravadora: {{album.gravadora}}</p>
+
+<app-lista-musicas [musicas]="album.musicas"> </app-lista-musicas>

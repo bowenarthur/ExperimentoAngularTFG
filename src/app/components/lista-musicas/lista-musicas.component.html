@@ -1,0 +1,14 @@
+<table class="tabela" *ngIf="musicas && musicas.length > 0">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Duração</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let musica of musicas">
+    <tr (click)="onClick(musica)">
+      <td>{{ musica.nome }}</td>
+      <td>{{ musica.duracao }}</td>
+    </tr>
+  </tbody>
+</table>

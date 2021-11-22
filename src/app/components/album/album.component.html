@@ -1,0 +1,10 @@
+<div class="column">
+  <div class="botoes">
+    <a class="edit" (click)="mostrarForm()">&#9998;</a>
+    <a class="delete" (click)="deleteAlbum(this.album._id)">&times;</a>
+  </div>
+  <div class="card" (click)="mostrarDetalhes()">
+    <img alt="" [src]="album.capa" />
+    <p>{{ album.nome }}</p>
+  </div>
+</div>

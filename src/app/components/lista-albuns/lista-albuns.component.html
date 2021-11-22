@@ -1,0 +1,12 @@
+<div>
+  <h3>{{ titulo }}</h3>
+  <div class="scrollmenu row dragscroll">
+    <div *ngFor="let album of albuns">
+      <app-album
+        [album]="album"
+        (mostrarDetalhesEvent)="mostrarDetalhes($event)"
+        (mostrarFormEvent)="mostrarForm($event)"
+      ></app-album>
+    </div>
+  </div>
+</div>

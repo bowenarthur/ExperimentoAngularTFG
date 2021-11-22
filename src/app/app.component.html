@@ -1,0 +1,25 @@
+<div class="app">
+  <app-header (mostrarFormEvent)="mostrarForm()"></app-header>
+  <app-lista-albuns
+    titulo="Últimos álbuns"
+    [albuns]="albuns"
+    (mostrarDetalhesEvent)="mostrarDetalhes($event)"
+    (mostrarFormEvent)="mostrarForm($event)"
+  ></app-lista-albuns>
+
+  <div class="modal" *ngIf="openDetalhes">
+    <app-detalhes
+      [album]="album"
+      (fecharDetalhesEvent)="fecharDetalhes()"
+    ></app-detalhes>
+  </div>
+
+  <div class="modal" *ngIf="openForm">
+    <app-formulario
+      [album]="album"
+      (fecharFormEvent)="fecharForm()"
+    ></app-formulario>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+<h3>Músicas</h3>
+<br />
+<label for="nome">Nome: </label>
+<input type="text" name="nome" [(ngModel)]="nome" />
+<br />
+<label for="duracao">Duração: </label>
+<input type="text" name="duracao" [(ngModel)]="duracao" />
+<button type="button" (click)="adicionarMusica()">
+  Adicionar
+</button>
+
+<app-lista-musicas [musicas]="musicas" (onClickEvent)="removerMusica($event)">
+</app-lista-musicas>
